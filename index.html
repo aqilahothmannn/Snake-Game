@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#10151f">
+    <meta
+      name="description"
+      content="A bright, modern take on the classic Snake game. Play in your browser."
+    >
+    <title>Snake — a little arcade classic</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="game">
+      <header class="game__header">
+        <a class="brand" href="./" aria-label="Snake home">
+          <span class="brand__icon" aria-hidden="true">↗</span>
+          <span class="eyebrow">THE LITTLE ARCADE</span>
+        </a>
+        <h1>Snake<span>.</span></h1>
+        <p class="game__intro">A familiar classic. One more go?</p>
+      </header>
+
+      <section class="game__controls" aria-label="Game settings">
+        <label class="difficulty">
+          <span class="difficulty__label">Difficulty</span>
+          <select id="difficulty" aria-label="Difficulty">
+            <option value="easy">Easy</option>
+            <option value="normal" selected>Normal</option>
+            <option value="hard">Hard</option>
+          </select>
+        </label>
+        <button class="button button--quiet" id="sound-button" type="button" aria-pressed="false">
+          Sound: Off
+        </button>
+        <button class="button button--quiet" id="pause-button" type="button" disabled>
+          <span aria-hidden="true">Ⅱ</span>
+          <span id="pause-button-label">Pause</span>
+        </button>
+      </section>
+
+      <section class="scoreboard" aria-label="Game scores">
+        <div class="score-card">
+          <span class="score-card__label"><span class="score-dot"></span>Score</span>
+          <span class="score-card__value" id="score">0</span>
+        </div>
+        <div class="score-card score-card--best">
+          <span class="score-card__label"><span class="trophy" aria-hidden="true">✦</span>Best</span>
+          <span class="score-card__value" id="high-score">0</span>
+        </div>
+      </section>
+
+      <section class="personal-stats" aria-label="Personal statistics">
+        <h2 class="personal-stats__heading">Your stats</h2>
+        <div class="personal-stats__grid">
+          <div class="stat-card">
+            <span class="stat-card__label">Games</span>
+            <span class="stat-card__value" id="games-played">0</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-card__label">Food eaten</span>
+            <span class="stat-card__value" id="food-eaten">0</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-card__label">Boards cleared</span>
+            <span class="stat-card__value" id="games-won">0</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="board" aria-label="Snake game">
+        <canvas
+          id="game-canvas"
+          width="600"
+          height="600"
+          aria-label="Snake game board. Use arrow keys or W, A, S, D to move."
+          aria-describedby="game-status"
+        >
+          Your browser does not support the canvas element.
+        </canvas>
+        <div class="game-overlay" id="game-overlay">
+          <div class="overlay-card">
+            <span class="overlay-card__icon" id="overlay-icon" aria-hidden="true">✳</span>
+            <p class="overlay-card__eyebrow" id="overlay-eyebrow">READY WHEN YOU ARE</p>
+            <h2 id="overlay-title">A little snack?</h2>
+            <p class="overlay-card__message" id="overlay-message">
+              Collect the glowing dots. Try not to bump into yourself.
+            </p>
+            <button class="button button--play" id="overlay-button" type="button">
+              Play
+              <span aria-hidden="true">→</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <p class="game__status" id="game-status" aria-live="polite">
+        Choose a difficulty and press Play to start.
+      </p>
+
+      <section class="mobile-controls" aria-label="Touch controls">
+        <div class="d-pad">
+          <button class="d-pad__button d-pad__button--up" type="button" data-direction="up" aria-label="Move up">↑</button>
+          <button class="d-pad__button d-pad__button--left" type="button" data-direction="left" aria-label="Move left">←</button>
+          <button class="d-pad__button d-pad__button--down" type="button" data-direction="down" aria-label="Move down">↓</button>
+          <button class="d-pad__button d-pad__button--right" type="button" data-direction="right" aria-label="Move right">→</button>
+        </div>
+      </section>
+
+      <footer class="game__footer">
+        <p><kbd>↑</kbd> <kbd>←</kbd> <kbd>↓</kbd> <kbd>→</kbd> <span>or</span> <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> to move</p>
+        <p><kbd>Space</kbd> pause <span class="footer-divider">·</span> <kbd>Enter</kbd> play again</p>
+      </footer>
+    </main>
+  </body>
+</html>
