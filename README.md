@@ -1,7 +1,7 @@
 # 🐍 Snake
 A polished, responsive take on the classic Snake game. Play in your browser on desktop or mobile, with no install or frameworks needed.
 
-**▶️ [Play now](https://aqilahothmannn.github.io/YOUR-REPOSITORY/)**
+**▶️ [Play now][(https://aqilahothmannn.github.io/Snake-Game/)]**
 
 ## Features
 - 20 × 20 canvas game board with a glowing snake and food
